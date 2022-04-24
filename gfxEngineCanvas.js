@@ -67,7 +67,7 @@ ajuc.gfx.engine.canvas = (function(utils) {
 		sprite1 = utils.loadTiles("gfx/sprites/bullet0.png", 1, 1, hideLoadingScreenIfPossible);
 		sprite2 = utils.loadTiles("gfx/sprites/sprites_1.png", 16, 16, hideLoadingScreenIfPossible);
 
-		backgrounds = utils.loadTiles("gfx/others/clouds.png", 1, 1, hideLoadingScreenIfPossible);
+		backgrounds = utils.loadTiles("gfx/others/clouds.jpeg", 1, 1, hideLoadingScreenIfPossible);
 		tiles = utils.loadTiles("gfx/tiles/tiles_1.png", 16, 16, hideLoadingScreenIfPossible);
 		
 		canvasObj = $("#TiledArcadeCanvas").get(0);

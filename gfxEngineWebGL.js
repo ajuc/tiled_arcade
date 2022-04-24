@@ -410,7 +410,7 @@ ajuc.gfx.engine.webgl = (function(utils) {
 		spriteTextures[2] = initTexture("gfx/sprites/sprites_1.png", hideLoadingScreenIfPossible);
 		
 		backgroundTextures = new Array(2);
-		backgroundTextures[0] = initTexture("gfx/others/clouds.png", hideLoadingScreenIfPossible);
+		backgroundTextures[0] = initTexture("gfx/others/clouds.jpeg", hideLoadingScreenIfPossible);
 		
 		tileTextures = new Array(2);
 		tileTextures[0] = initTexture("gfx/tiles/tiles_1.png", hideLoadingScreenIfPossible);
