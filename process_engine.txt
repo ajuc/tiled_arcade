@@ -1,0 +1,22 @@
+var process = {
+	name: "",
+	version: "",
+	description: "",
+	parameters: {
+		param1 : { required: true, in: true, out: false, default: null},
+		param2 : { required: true, in: true, out: false, default: null}
+	},
+	start: "start_node_name",
+	nodes: {
+		start_node_name : {},
+		greetings : {},
+		how_rude : {},
+		thank_you : {},
+		goodbye : {},
+		end_node : {}
+	},
+	transitions: {
+		start_node_name : { destination: "greetings", condition: null},
+		greetings : {destination : "
+	}
+});

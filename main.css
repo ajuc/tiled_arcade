@@ -1,0 +1,420 @@
+* { margin: 0; padding: 0; }
+
+body {
+	background-color:#aaaaaa;
+}
+
+a {
+	color: blue;
+}
+
+.Transparent {
+	background-color: transparent;
+}
+
+#FPS {
+	font-size: xx-small;
+}
+
+.Money {
+	size: xx-large;
+	color: gold;
+}
+	
+.page1 {
+	display: block;
+}
+.page2 {
+	display: none;
+}
+.page3 {
+	display: none;
+}
+.page4 {
+	display: none;
+}
+.page5 {
+	display: none;
+}
+.page6 {
+	display: none;
+}
+.page7 {
+	display: none;
+}
+
+#TiledArcadeWebGLCanvas {
+	float: left;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	z-index: 0;
+}
+
+#TiledArcadeBackgroundCanvas {
+	float: left;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	z-index: 0;
+}
+
+#TiledArcadeCanvas {
+	float: left;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	z-index: 1;
+}
+#TiledArcadeSpritesCanvas {
+	float: left;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	z-index: 1.5;
+}
+
+
+#Sidebar {
+	
+	position: absolute;
+	left: 70%;
+	top: 0%;
+	bottom: 20%;
+	right: 0%;
+	
+	margin: 0px;
+	padding: 0px;
+	padding-left: 1px;
+	border: 2px solid black;
+	border-bottom: none;
+}
+
+.Bar {
+	background-color:#888888;
+	display:block;
+	padding: 1px;
+	margin: 1px;
+	margin-right: 4px;
+	border: 1px sold black;
+	height: 20;
+	width: 20;
+}
+.BarInterior {
+	display:block;
+	padding: 1px;
+	margin: 1px;
+	padding-right: 6px;
+	border: 2px;
+	height: 16;
+	width: 16;
+}
+.Health {
+	background-color: #ee9999;
+}
+.Energy {
+	background-color: #9999ee;
+}
+.Ammo {
+	background-color: #000000;
+	color: #ffffff;
+}
+.Fuel {
+	background-color: #99ee99;
+}
+
+.ESC:before {
+	content: url("gfx/sprites/esc_before.png");
+}
+
+#MainMenu {
+	background-color:#ffffff;
+	background-image: url("gfx/others/loading.png");
+	background-position: 0% 0%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#Help {
+	background-color:#ffffff;
+	background-image: url("gfx/others/loading.png");
+	background-position: 0% 0%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#Debug {
+	background-color:#ffffff;
+	background-image: url("gfx/others/loading.png");
+	background-position: 0% 0%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.UiScreen {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 1;
+}
+
+
+.CenteredMenu {
+	background-color: transparent;
+	position: absolute;
+	left: 20%;
+	top: 20%;
+	width: 60%;
+	height: 40%;
+	z-index: 0;
+}
+
+
+.LeftPanel {
+	background-color: white;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 50%;
+	bottom: 0%;
+	z-index: 0;
+}
+.LeftPanel > h1 {
+	text-align: left;
+}
+.RightPanel {
+	background-color: white;
+	position: absolute;
+	left: 50%;
+	top: 0%;
+	width: 50%;
+	bottom: 0%;
+	z-index: 0;
+}
+.RightPanel > h1 {
+	text-align: right;
+
+}
+
+.CenteredMenu > * {
+	size: x-large;
+	background-color: transparent;
+	text-align: center;
+}
+
+.CenteredMenu > h1 {
+	size: xx-large;
+	margin : 5%;
+}
+
+.Tabs > ul {
+	border-top-style:solid;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-left-style:solid;
+	padding-bottom: 1px;
+	display: inline;
+}
+ul.ChoosenTab {
+	border-bottom-color:white;
+}
+
+.TabContent {
+	border-top-style:solid;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-left-style:solid;
+	padding-top: 1px;
+	width:95%;
+	height:85%;
+}
+
+.Part {
+	position: relative;
+	padding: 1px;
+}
+
+.Part > p {
+	background-color: white;
+	text-align: left;
+	margin-right: 67px;
+}
+
+.Part > h3 {
+	background-color: white;
+	text-align: left;
+	vertical-align: text-top;
+	margin-right: 67px;
+}
+
+.Status {
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	display: block;
+}
+.StatusList {
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	width: 66px;
+	height: 66px;
+}
+.StatusDiv {
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+}
+.PartStatusList {
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	width: 60px;
+	height: 92px;
+}
+.PartStatusList > * {
+	padding: 0px;
+	margin: 0px;
+}
+.StatusPartImg {
+	position: relative;
+	width: 64px;
+	height: 64px;
+	top: 0px;
+	right: 0px;
+	background-image : url(gfx/sprites/sprites_1.png);
+	background-repeat: no-repeat;
+	padding: 0px;
+	margin: 0px;
+}
+.PartImg {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-image : url(gfx/sprites/sprites_1.png);
+	background-repeat: no-repeat;
+	padding: 1px;
+}
+
+.PortraitImg {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	top: 0px;
+	background-image : url(gfx/others/portraits.png);
+	background-repeat: no-repeat;
+	padding: 1px;
+}
+
+.Left {
+	left: 0px;
+}
+.Right {
+	right: 0px;
+}
+
+#LoadingScreen {
+	background-color:#ffffff;
+	background-image: url("gfx/others/loading.png");
+	background-position: 0% 0%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	display: block;	
+}
+
+
+#Title {
+	background-color:#ffffff;
+	position: absolute;
+	left: 40%;
+	top: 30%;
+}
+
+#ProgressBar {
+	background-color:#777777;
+	position: absolute;
+	left: 40%;
+	top: 45%;
+	width: 20%;
+	height: 5%;
+}
+
+#ProgressBarInside {
+	background-color:#999999;
+	position: absolute;
+	left: 4%;
+	top: 15%;
+	width: 1%;
+	height: 70%;
+}
+
+#Information {
+	background-color:#ffffff;
+	position: absolute;
+	left: 40%;
+	top: 37%;
+}
+
+#Messages {
+	background-color:#999999;
+	position: absolute;
+	border: 2px solid black;
+	padding: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	left: 0%;
+	top: 80%;
+	right: 0%;
+	bottom: 0%;
+}
+
+#DialogContent {
+	top: 1px;
+	left: 67px;
+	right: 67px;
+	height: 80%;
+	position: absolute;
+	margin-bottom: 15px;
+}
+#DialogOptions {
+	top: 80%;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+}
+
+li {
+	list-style-type:none;
+}
+
+.ShipPartsGrid  {
+	position: relative;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}
+
+.hidden {
+	display: none;
+}
+
+#Blue {
+	color: blue;
+}

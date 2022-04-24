@@ -1,0 +1,6 @@
+if ((typeof(ajuc) === 'undefined')) {
+        ajuc = {};
+}
+
+ajuc.tiledArcade = (function(utils, lzw, makeClass, enums, hierarchy) {
+<---

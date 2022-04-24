@@ -1,0 +1,162 @@
+<html>
+	<head>
+		<title>SkyNomads unit tests</title>
+		<script type="text/javascript" src="jquery-1.6.2.js"></script>
+		<script type="text/javascript" src="lyfe.js"></script>
+		<script type="text/javascript" src="qunit.js"></script>
+		<link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="makeclass.js"></script>
+		<script type="text/javascript" src="tiled_arcade.js"></script>
+		<script type="text/javascript" src="utils.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				module("Ajuc.Utils");
+				var $u = Ajuc.Utils;
+				
+				test("set", function() {
+					ok(!($u.set()["a"]));
+					ok(!($u.set(1,2,"b")["a"]));
+					ok(($u.set(1,2,"b")[2]));
+					ok(($u.set(1,2,"b")["b"]));
+					ok(($u.set([1,2,"b"])["b"]));
+					ok(!($u.set([1,2,"b"])["a"]));
+				});
+
+				test("map", function() {
+					raises(function(){$u.map();});
+					raises(function(){$u.map(function (x) {return -x;});});
+					raises(function(){$u.map(function (x, y) {return [x,y];}, {"a":1, "b":2}, {"a":1, "b":2});});
+					
+					deepEqual($u.map(function (x) {return -x;}, [1,2,3]), [-1, -2, -3]);
+					deepEqual($u.map(function (x,y) {return x-y;}, [1,2,3], [3,2,1]), [-2, 0, 2]);
+					deepEqual($u.map(function (x,y) {return x-y;}, [1,2], [3,2,1]), [-2, 0]);
+					deepEqual($u.map(function (x,y) {return x-y;}, [1,2,3], [3,2]), [-2, 0, NaN]);
+					deepEqual($u.map(function (x,y) {return [x,y];}, { "a":1, "b":2, "c":3}), { "a":1, "b":2, "c":3});
+					deepEqual($u.map(function (x,y) {return [y,x];}, { "a":1, "b":2, "c":3}), { 1:"a", 2:"b", 3:"c"});
+				});
+
+				
+								 
+				module("SkyNomads.Input");
+								 
+				test("setupKeysToActions", function() {
+					var $i = SkyNomads.Input;
+					var $ik = SkyNomads.Input.KEY_CODES;
+					var settingsWrongEmpty = {};
+					var settingsWrongNotAll = {
+						"RIGHT" :		$ik.right_arrow,
+						"UP" :			$ik.up_arrow,
+						"LEFT" :		$ik.left_arrow,
+						"DOWN" :		$ik.down_arrow
+					};
+					var settingsWrongNotUnique = {
+						"RIGHT" :		$ik.right_arrow,
+						"UP" :			$ik.up_arrow,
+						"LEFT" :		$ik.left_arrow,
+						"DOWN" :		$ik.left_arrow,
+						
+						"ESCAPE" :		$ik.escape,
+						"SELECT" :		$ik.enter,
+						
+						"LAST_TOOL" :	$ik.a,
+						"USE_TOOL" :	$ik.s,
+						"NEXT_TOOL" :	$ik.d,
+
+						"LEAVE" :		$ik.q,
+						"TALK" :		$ik.w,
+						"ENTER" :		$ik.e
+					};
+					var settingsWrongNotKeys1 = $u.clone(settingsWrongNotUnique);
+					settingsWrongNotKeys1["LEFT"] = "aa";
+					settingsWrongNotKeys1["DOWN"] = "ab";
+
+					var settingsWrongNotKeys2 = $u.clone(settingsWrongNotUnique);
+					settingsWrongNotKeys2["LEFT"] = 11;
+					settingsWrongNotKeys2["DOWN"] = 22;
+					
+					var settingsWrongSuperflous = $u.clone(settingsWrongNotUnique);
+					settingsWrongSuperflous["DOWN"] = $ik.down_arrow;
+					settingsWrongSuperflous["SOMETHING"] = $ik.z;
+
+					var settingsGood = $u.clone(settingsWrongNotUnique);
+					settingsGood["DOWN"] = $ik.down_arrow;
+					
+					var result = {};
+					
+					raises(function(){$i.setupKeysToActions(settingsWrongEmpty);});
+					raises(function(){$i.setupKeysToActions(settingsWrongNotAll);});
+					raises(function(){$i.setupKeysToActions(settingsWrongNotUnique);});
+					raises(function(){$i.setupKeysToActions(settingsWrongNotKeys1);});
+					raises(function(){$i.setupKeysToActions(settingsWrongNotKeys2);});
+					raises(function(){$i.setupKeysToActions(settingsWrongSuperflous);});
+					deepEqual($i.setupKeysToActions(settingsGood), {
+						"13": "SELECT",
+						"27": "ESCAPE",
+						"37": "LEFT",
+						"38": "UP",
+						"39": "RIGHT",
+						"40": "DOWN",
+						"65": "LAST_TOOL",
+						"68": "NEXT_TOOL",
+						"69": "ENTER",
+						"81": "LEAVE",
+						"83": "USE_TOOL",
+						"87": "TALK"
+					});
+				});
+				test("onKeyPress/Release", function() {
+					var $i = SkyNomads.Input;
+					var $ik = SkyNomads.Input.KEY_CODES;
+					var $ia = SkyNomads.Input.ACTIONS;
+					
+					var settings = {
+						"RIGHT" :		$ik.right_arrow,
+						"UP" :			$ik.up_arrow,
+						"LEFT" :		$ik.left_arrow,
+						"DOWN" :		$ik.down_arrow,
+						
+						"ESCAPE" :		$ik.escape,
+						"SELECT" :		$ik.enter,
+						
+						"LAST_TOOL" :	$ik.a,
+						"USE_TOOL" :	$ik.s,
+						"NEXT_TOOL" :	$ik.d,
+
+						"LEAVE" :		$ik.q,
+						"TALK" :		$ik.w,
+						"ENTER" :		$ik.e
+					};
+					var keysToActions = $i.setupKeysToActions(settings);
+					var actions = {};
+					$i.onKeyPress({keyCode:$ik.w}, actions, keysToActions),
+					equal(actions["TALK"],true);
+					$i.onKeyRelease({keyCode:$ik.w}, actions, keysToActions),
+					equal(actions["TALK"],false);
+				});
+				
+				module("SkyNomads.Level");
+				test("levelFromSVGFile", function() {
+					var $l = SkyNomads.Level;
+					
+					ok(!$l.levelFromSVGFile("notExisting.svg"));
+					
+					
+					
+					ok($l.levelFromSVGFile("world.svg"));
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<body>
+			<h1 id="qunit-header">SkyNomads unit tests</h1>
+			<h2 id="qunit-banner"></h2>
+			<div id="qunit-testrunner-toolbar"></div>
+			<h2 id="qunit-userAgent"></h2>
+			<ol id="qunit-tests"></ol>
+			<div id="qunit-fixture">ukryte</div>
+		</body>
+	</body>
+</html>

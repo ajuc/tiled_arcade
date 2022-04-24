@@ -1,0 +1,44 @@
+// Pomysl na rozwiazanie przechodzenia miedzy poziomami,
+// oraz subquestow
+
+var event = {
+	name : "",
+	description : "",
+	condition : undefined, //function
+	condition_parameters : {},
+	action : undefined, //function
+	action_parameters : {}
+};
+
+conditions = [
+	
+];
+actions = [
+	next_level,
+];
+
+
+// Podstawowym celem bedzie naprawienie internetu :)
+// czyli naprawa urzadzen roznego typu, zeby umozliwic ponowny rozkwit ludzkosci
+// bedzie sie to robic
+ - zbierajac informacje o tym, gdzie sa stacje przekaznikowe
+ - przewozac czesci zapasowe do roznch urzadzen
+ - przecigajac kable
+
+//przeszkadzac beda pozostalosci z inwazji, oraz grupki mniej oswieconych ludzi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

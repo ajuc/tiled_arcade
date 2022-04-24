@@ -1,0 +1,33 @@
+This branch was created to make atlernative Rendering Engine using WebGL for the game.
+
+The end result should be:
+  * interface for:
+    - intitializing graphics
+    - changing the drawing area size
+    - clearing the drawing area
+    - drawing background on the drawing area
+    - drawing tiles on the drawing area
+    - drawing sprites on the drawing area
+    - returning the resources to the system
+
+  * implementations of this interface using:
+    - html5 canvas
+    - WebGL
+  
+  * a way to detect, if browser+system supports canvas, or WebGL
+  * a way to switch between available rendering engines mid-game
+
+To get to this point, we need:
+  1. specify the interface																	[DONE]
+  2. implement the interface using canvas (mostly refactoring the current drawing code)		[DONE]
+  3. use the interface in the game instead of direct calls on canvas						[DONE]
+
+  4. implement the interface in WebGL														[IN PROGRESS]
+
+  5. implement the available rendering engines code
+  6. implement the rendering engine switching code
+
+NOTE:
+  - ui drawing is done by DOM elements, so is independent of rendering engines
+  - there may be problem with resizing/minimalizing and maximizing the browser window with WebGL - be sure to check this
+  - provide a way to override available rendering engines detection for broken browsers

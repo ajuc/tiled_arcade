@@ -1,0 +1,35 @@
+1. Przerobic reakcje na kolizje na impulse-based [jeszcze inaczej zrobilem, zostal maly blad na rogach klockow]
+
+2. Zrobic czesci skladowe
+	2.1	silniki		[OK, ale nie zuzywaja jeszcze]
+	2.2	opancerzenie
+	2.3	bronie i narzedzia [OK]
+	2.4	generatory
+	2.5	elektronika
+
+3. Dodac przeciwnikow:
+	3.1. Dzialka
+	3.2. Statki			[OK]
+	3.3. Pojazdy ladowe
+
+4. Dodac budynki:
+	4.1 warsztat						
+	4.2 knajpe
+	4.3 serwerownie
+	4.4 elektrownie
+	4.5 stacje nadawczo - odbiorcza
+
+5. Dodac zapisywanie gry			[OK]
+
+6. Dodac efekty tla na fizyke:
+	6.0 powietrze [OK]
+	6.1 wode
+	6.2 chmury
+	6.3 smog ?
+	6.4 proznie ?
+
+7. Dodac edytor obiektow
+	7.1 robic to w tiled jako objects z parametrami odpowiednimi	[OK]
+	7.2 albo dorobic edycje wewnatrz gry, jako oddzielny tryb	[WONTFIX]
+
+8. Poruszanie sie po menu klawiszami.

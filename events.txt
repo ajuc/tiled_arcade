@@ -1,0 +1,14 @@
+var dialog_tree_1 = {
+	
+};
+
+var actions = {
+	"dialog" : dialog_tree_1,
+	"changeLevel" : change_level
+
+	
+};
+
+var events = {
+	
+};

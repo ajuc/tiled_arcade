@@ -1,0 +1,75 @@
+[INTRO]
+
+Grandpa:
+	Ok, so I'll tell you the story. You should know, and pass this to your kids. I'm old, can die any day now.
+
+Yacek:
+	Grandpa!
+
+Grandpa:
+	It was interesting time to live. Once in the known history
+regular people had such power. Power to kill the whole Earth population on a whim.
+
+	People weren't really thinking about it that way. At least at first. It was all about
+the freedom of speech, the right to communicate, and the ultimate humanitarian right - to copy.
+
+	Gray, long-bearded prophets of free software and nerdy teenagers - nobody thought about them
+as a serious political force, until 2012. Yet somehow they became one. And they won their war againist copyright.
+Information really wants to be free, I guess.
+
+	By the time hackers won, everybody was on their side. World was preparing for the incoming
+age of prosperity, that the free information will bring. I thought so, too. We were all so naive.
+3d printers, independent manufacturing, that was just the begining.
+
+Yacek:
+	Then the plague happened?
+
+Grandpa:
+	Yes. It was inevitable. We just couldn't see that then.
+
+Yacek:
+	Why? Hackers created the plague? Harold told me you were a hacker, so it's also your fault..
+
+Grandpa:
+	Harold is stupid. Hackers weren't some group with clear agenda. Anybody did, what he wanted.
+	And I don't know who created this particular plague.
+
+Yacek:
+	There were more plagues?
+
+Grandpa:
+	Yeah, tousands, if not millions. This one was just the most effective attempt.
+	It doesn't really matter, who created it. When molecular assemblers were invented,
+	and then available as schema for your desk 3d printer, it was only a matter of time.
+	People started doing anything with them. Governments wanted to stop that. People printed bombs,
+	plastic guns, rogue computing devices.
+
+	Do you know that 2 years after this invention we had like 10 working drugs for cancer?
+	People tested drugs on themselves, when they lost hope. And surprise, surprise - out of milions
+	of tries some drugs actually worked. It was the greatest moment in the mankind history.
+
+Yacek:
+	This cancer - was it worse than plague?
+
+Grandpa:
+	It was different - cancer killed mostly old people, and it took few years to do so.
+	But it was often fatal, and people thought then, that we can make everybody live forever.
+	So it seemed like important thing to do. The drugs for cancer was the greatest human
+	inventions, it took decades of work of millions people all around the world.
+
+	The drug for plague was piece of cake compared to drugs for cancer.
+
+Yacek:
+	If the plagues was so easy to cure, why nobody did it!? Why so many people had to die?
+
+Grandpa:
+	The problem with plague was - it gave no warnings, no signs that something is wrong.
+	Everybody was infected for a few weeks, and nobody even knew it's there. So nobody worked on the cure.
+	And then someone pushed the button, plague activated, and 90% of people were dead during the first hour.
+	The cure was ready next day. But in the meantime nukes started raining. And here we are.
+
+[TUTORIAL]
+
+[]
+
+[]

@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tiled Arcade - test lyfe</title>
+	<link href="main.css" rel="stylesheet"> 
+  </head>
+  <body>
+	<script src="jquery-1.6.2.js"></script>
+	<script src="lyfe.js"></script>
+	
+	
+	<div id="console0"></div>
+	<div id="console1"></div>
+	<div id="console2"></div>
+	<div id="console3"></div>
+	<div id="console4"></div>
+	<div id="console5"></div>
+	<div id="console6"></div>
+	<div id="console7"></div>
+	<div id="console8"></div>
+	<div id="console9"></div>
+	<div id="console10"></div>
+	<div id="console11"></div>
+	<div id="console12"></div>
+	<div id="console13"></div>
+	<div id="console14"></div>
+	<div id="console15"></div>
+	<div id="console16"></div>
+	<div id="console17"></div>
+	<div id="console18"></div>
+	<div id="console19"></div>
+	<div id="console20"></div>
+	<div id="console21"></div>
+	<div id="console22"></div>
+	<div id="console23"></div>
+	<div id="console24"></div>
+	<div id="console25"></div>
+	<div id="console26"></div>
+	<div id="console27"></div>
+	<div id="console28"></div>
+	<div id="console29"></div>
+	<div id="console30"></div>
+	<div id="console31"></div>
+	<div id="console32"></div>
+	<div id="console33"></div>
+	<div id="console34"></div>
+	<div id="console35"></div>
+	<div id="console36"></div>
+	<div id="console37"></div>
+	<div id="console38"></div>
+	<div id="console39"></div>
+	<div id="console40"></div>
+	<div id="console41"></div>
+	<div id="console42"></div>
+	<div id="console43"></div>
+	<div id="console44"></div>
+	<div id="console45"></div>
+	<div id="console46"></div>
+	<div id="console47"></div>
+	<div id="console48"></div>
+	<div id="console49"></div>
+	<div id="console50"></div>
+	<div id="console51"></div>
+	<div id="console52"></div>
+	<div id="console53"></div>
+	<div id="console54"></div>
+	<div id="console55"></div>
+	<div id="console56"></div>
+	<div id="console57"></div>
+	<div id="console58"></div>
+	<div id="console59"></div>
+	<div id="console60"></div>
+	<div id="console61"></div>
+	<div id="console62"></div>
+	<div id="console63"></div>
+	<div id="console64"></div>
+	<div id="console65"></div>
+	<div id="console66"></div>
+	<div id="console67"></div>
+	<div id="console68"></div>
+	<div id="console69"></div>
+	<div id="console70"></div>
+	<div id="console71"></div>
+	<div id="console72"></div>
+	<div id="console73"></div>
+	<div id="console74"></div>
+	<div id="console75"></div>
+	<div id="console76"></div>
+	<div id="console77"></div>
+	<div id="console78"></div>
+	<div id="console79"></div>
+	<div id="console80"></div>
+	<div id="console81"></div>
+	<div id="console82"></div>
+	<div id="console83"></div>
+	<div id="console84"></div>
+	<div id="console85"></div>
+	<div id="console86"></div>
+	<div id="console87"></div>
+	<div id="console88"></div>
+	<div id="console89"></div>
+	<div id="console90"></div>
+	<div id="console91"></div>
+	<div id="console92"></div>
+	<div id="console93"></div>
+	<div id="console94"></div>
+	<div id="console95"></div>
+	<div id="console96"></div>
+	<div id="console97"></div>
+	<div id="console98"></div>
+	<div id="console99"></div>
+	<div id="console100"></div>
+	
+    <script>
+	var loops = new Array(10);
+	var j;
+	var n = loops.length;
+	for (j=0; j<n; j++) {
+		loops[j] = Generator(function () {
+			while (true) {
+				this.yield("Hello");
+				if (false)
+					this.yield("ignore me");
+				for (var i = 0; i < 6; i++)
+					this.yield(" world".substr(i, 1));
+			}
+		});
+	}
+
+	function update() {
+		var i;
+		var n = loops.length;
+		var tmp;
+		for (i=0; i<n; i++) {
+			tmp = loops[i].first();
+			loops[i] = loops[i].skip(1);
+		}
+		$("#console1").text(tmp); // "HELLO WORLD!";
+	};
+
+	 window.setInterval(update, 1000/60);
+    </script>
+  </body>
+</html>

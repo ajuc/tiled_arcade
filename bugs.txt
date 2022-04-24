@@ -1,0 +1,4 @@
+ - BUG-0 sometimes objects can penetrate into walls (on corners)
+ - BUG-1 game is "saved" to incorrect state when exiting from page when in menu -
+	should only save game when in game screen, not in menu
+ - BUG-2 games freezes when loading game on firefox (shows screen without objects) (possibly a consequence of BUG-1)
